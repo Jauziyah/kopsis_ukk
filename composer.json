@@ -15,7 +15,7 @@
         "codeigniter4/shield": "^1.2"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.9",
+        "fakerphp/faker": "^1.24",
         "mikey179/vfsstream": "^1.6",
         "phpunit/phpunit": "^10.5.16"
     },
