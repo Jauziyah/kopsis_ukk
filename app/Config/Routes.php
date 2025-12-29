@@ -7,10 +7,13 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-service('auth')->routes($routes, ['except' => ['register']]);
+service('auth')->routes($routes, ['except' => ['register', 'login']]);
 
 $routes->get('/register', '\App\Controllers\RegisterAdd::registerView');
 $routes->post('register', '\App\Controllers\RegisterAdd::registerAction');
+
+$routes->get('login' , '\CodeIgniter\Shield\Controllers\LoginController::loginView');
+$routes->post('login', '\App\Controllers\LoginAdd::');
 
 $routes->group('admin', ['filter'=> 'group:admin'], function($routes){
     $routes->get('/', 'Admin_display_page::index');

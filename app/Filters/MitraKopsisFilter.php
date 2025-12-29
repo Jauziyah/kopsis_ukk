@@ -29,7 +29,7 @@ class MitraKopsisFilter implements FilterInterface
         return redirect()->to('login');
        }
 
-       if(!auth()->user()->inGroup('mitra_kopsis', 'siswa')){
+       if(!auth()->user()->inGroup('mitra_kopsis')){
             return redirect()->to('/')->with('error', 'Access denied. Mitra Kopsis only.');
        }
     }
