@@ -23,7 +23,7 @@ class AuthGroups extends ShieldAuthGroups
      * --------------------------------------------------------------------
      * The group that a newly registered user is added to.
      */
-    public string $defaultGroup = 'user';
+    public string $defaultGroup = 'siswa';
 
     /**
      * --------------------------------------------------------------------
@@ -42,12 +42,12 @@ class AuthGroups extends ShieldAuthGroups
      */
     public array $groups = [
         'admin' => [
-            'title'       => 'Admin',
+            'title'       => 'admin',
             'description' => 'Day to day administrators of the site.',
         ],
-        'guru' => [
-            'title'       => 'guru',
-            'description' => 'guru pengawas.',
+        'mitra_kopsis' => [
+            'title'       => 'mitra_kopsis',
+            'description' => 'Mitra.',
         ],
         'siswa' => [
             'title'       => 'siswa',
@@ -64,13 +64,15 @@ class AuthGroups extends ShieldAuthGroups
      * If a permission is not listed here it cannot be used.
      */
     public array $permissions = [
-        'siswa.c_request' => 'Request penurunan poin siswa',
-        'siswa.access' => 'Request penurunan poin siswa',
-        'guru.c_pelanggaran' => 'Mencatat poin pelanggaran',
-        'guru.c_pengurangan' => 'Memproses request pengurangan',
-        'admin.c_pelanggaran' =>'Create pelanggaran poin',
-        'admin.u_pelanggaran' =>'Update pelanggaran poin',
-        'admin.d_pelanggaran' =>'Delete pelanggaran poin',
+        // mitra kopsis
+        'request_produk.mitra_kopsis' => 'mitra bisa merequest produk untuk dipajang',
+        'edit_produk.mitra_kopsis' => 'mitra bisa merequest edit produk untuk dipajang',
+
+        // admin
+        'admin_access.admin' => 'admin bisa akses page admin',
+
+        // siswa
+        'siswa_access.admin' => 'siswa bisa akses page siswa',
     ];
 
     /**
@@ -82,8 +84,9 @@ class AuthGroups extends ShieldAuthGroups
      * This defines group-level permissions.
      */
     public array $matrix = [
-        'admin' => ['admin*', 'guru*', 'siswa.access'],
+        'admin' => ['admin*','siswa.access'],
+        'mitra_kopsis' => ['mitra_kopsis*', 'siswa.access'],
         'siswa' => ['siswa*'],
-        'guru' => ['guru*', 'siswa.access']
+        // 'guru' => ['guru*', 'siswa.access']
     ];
 }

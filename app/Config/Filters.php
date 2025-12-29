@@ -2,6 +2,9 @@
 
 namespace Config;
 
+use App\Filters\AdminFilter;
+use App\Filters\MitraKopsisFilter;
+use App\Filters\SiswaFilter;
 use CodeIgniter\Config\Filters as BaseFilters;
 use CodeIgniter\Filters\Cors;
 use CodeIgniter\Filters\CSRF;
@@ -34,6 +37,10 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'mitra_kopsis' => MitraKopsisFilter::class,
+        'siswa' => SiswaFilter::class,
+        'admin' => AdminFilter::class,
+    
     ];
 
     /**
