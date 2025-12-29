@@ -9,7 +9,8 @@ $routes->get('/', 'Home::index');
 
 service('auth')->routes($routes, ['except' => ['register']]);
 
-// $routes->get('/register', '\App\Controllers\RegisterAdd::registerAction');
+$routes->get('/register', '\App\Controllers\RegisterAdd::registerView');
+$routes->post('register', '\App\Controllers\RegisterAdd::registerAction');
 
 $routes->group('admin', ['filter'=> 'group:admin'], function($routes){
     $routes->get('/', 'Admin_display_page::index');
