@@ -11,6 +11,4 @@ class Siswa_display_page extends BaseController
         return view('siswa/homepage');
     }
 }
-
-
 ?>

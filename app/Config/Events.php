@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Events\Register_event;
 use CodeIgniter\Events\Events;
 use CodeIgniter\Exceptions\FrameworkException;
 use CodeIgniter\HotReloader\HotReloader;
@@ -53,3 +54,6 @@ Events::on('pre_system', static function (): void {
         }
     }
 });
+
+
+Events::on('register', [Register_event::class, 'onRegister']);
