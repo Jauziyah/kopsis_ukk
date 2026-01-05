@@ -16,7 +16,7 @@ class LoginAdd extends ShieldLogin
 
             if ($user->inGroup('mitra_kopsis')){
                 return redirect()->to('mitra_kopsis');
-            } elseif ($user->inGroup('/admin')){
+            } elseif ($user->inGroup('admin')){
                  return redirect()->to(uri: '/admin');
             } elseif ($user->inGroup('siswa')){
                  return redirect()->to('/siswa');

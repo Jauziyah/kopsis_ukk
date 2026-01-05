@@ -7,7 +7,8 @@ use CodeIgniter\Model;
 class Request_penjual_model extends Model
 {
     protected $table            = 'request_penjual';
-    protected $allowedFields    = ['nama', 'pesan', 'siswa_siswa_id'];
+    protected $allowedFields    = ['nama', 'pesan', 'siswa_siswa_id', 'status'];
+    protected $primaryKey = 'request_id';
 
     // Dates;
     protected $createdField = 'created_at';
